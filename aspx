@@ -9,13 +9,10 @@
             if (event.target.id === 'resetFormContainer') {
                 document.getElementById('resetFormContainer').style.display = 'none';
             }
-            function showMessage(message) {
-                alert(message); // You can also customize the way the message is displayed using modals, popups, etc.
-            }
-            window.onload = function () {
-                // Call the showMessage JavaScript function with the 'msg' value from the code-behind
-                showMessage('<%= msg %>');
-              };
+            function bad() {
+                if (<%= msg %>!== "") {
+                    alert(<%= msg %>)
+                }
         }
     </script>
     <style>
@@ -120,7 +117,7 @@
             <div class="center">
                 <input type="submit" name="submit" value="Submit" class="btn" />
                 <button class="btn" type="submit">Reset</button>
-                <button class="btn" type="button" id="closeButton">Close</button>
+                <h3><%= msg %></h3>
             </div>
         </form>
     </div>
